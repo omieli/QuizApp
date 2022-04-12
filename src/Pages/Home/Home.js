@@ -77,7 +77,6 @@ const Home = ({ name, setName, fetchQuestions }) => {
           </Button>
         </div>
       </div>
-      <img src="/quiz.svg" className="banner" alt="quiz app" />
     </div>
   );
 };
