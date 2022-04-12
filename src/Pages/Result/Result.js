@@ -1,16 +1,16 @@
 import { Button } from "@material-ui/core";
 import { useEffect } from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
 import "./Result.css";
 
 const Result = ({ name, score }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!name) {
-      history.push("/");
+      navigate("/");
     }
-  }, [name, history]);
+  }, [name, navigate]);
 
   return (
     <div className="result">

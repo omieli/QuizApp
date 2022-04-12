@@ -1,6 +1,6 @@
 import { Button } from "@material-ui/core";
 import { useState } from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
 import "./Question.css";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
@@ -17,8 +17,7 @@ const Question = ({
   const [selected, setSelected] = useState();
   const [error, setError] = useState(false);
 
-  const history = useHistory();
-
+  const navigate = useNavigate()
   const handleSelect = (i) => {
     if (selected === i && selected === correct) return "select";
     else if (selected === i && selected !== correct) return "wrong";
@@ -33,7 +32,7 @@ const Question = ({
 
   const handleNext = () => {
     if (currQues > 8) {
-      history.push("/result");
+      navigate("/result");
     } else if (selected) {
       setCurrQues(currQues + 1);
       setSelected();

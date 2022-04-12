@@ -1,6 +1,6 @@
 import { Button, MenuItem, TextField } from "@material-ui/core";
 import { useState } from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Categories from "../../Data/Categories";
 import "./Home.css";
@@ -10,7 +10,7 @@ const Home = ({ name, setName, fetchQuestions }) => {
   const [difficulty, setDifficulty] = useState("");
   const [error, setError] = useState(false);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
     if (!category || !difficulty || !name) {
@@ -19,7 +19,7 @@ const Home = ({ name, setName, fetchQuestions }) => {
     } else {
       setError(false);
       fetchQuestions(category, difficulty);
-      history.push("/quiz");
+      navigate("/quiz");
     }
   };
 
