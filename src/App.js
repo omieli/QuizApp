@@ -27,25 +27,24 @@ function App() {
       <div className="app" style={{ backgroundImage: 'url("/backimg.jpg")' }}>
         <Header />
         <Routes>
-          <Route path="/"  element={
+          <Route path="/" exact element={
             <Home
               name={name}
               setName={setName}
               fetchQuestions={fetchQuestions}
             />}/>
        
-          <Route path="/quiz">
+          <Route path="/quiz" exact element={
             <Quiz
               name={name}
               questions={questions}
               score={score}
               setScore={setScore}
               setQuestions={setQuestions}
-            />
-          </Route>
-          <Route path="/result">
+              />}/>
+          <Route path="/result" exact element={
             <Result name={name} score={score} />
-          </Route>
+          }/>
         </Routes>
       </div>
     </BrowserRouter>
