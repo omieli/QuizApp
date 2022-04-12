@@ -6,7 +6,13 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app">
-      <Header />
+        <Header />
+        <Switch>
+          <Route path='/' exact>
+            <Home />
+
+          </Route>
+        </Switch>
       </div>
       </BrowserRouter>
   );
